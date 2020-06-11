@@ -1,0 +1,34 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: greeter-server
+  name: greeter-server
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      run: greeter-server
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: greeter-server
+    spec:
+      containers:
+      - image: jenniferstrej/greeter-server:1.0
+        name: greeter-server
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: greeter-server
+  name: greeter-server
+spec:
+  ports:
+  - port: 50051
+    protocol: TCP
+    targetPort: 50051
+  selector:
+    app: greeter-server

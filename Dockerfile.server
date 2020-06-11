@@ -1,0 +1,8 @@
+FROM python:3
+
+ADD ./* ./ 
+
+RUN pip install grpcio
+RUN pip install grpcio-tools
+
+CMD [ "python", "./greeter_server.py" ]
