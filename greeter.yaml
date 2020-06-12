@@ -16,7 +16,7 @@ spec:
         app: greeter-server
     spec:
       containers:
-      - image: jenniferstrej/greeter-server:063d367d20dcb297442e13cbba68fc2f4fd6c98d
+      - image: jenniferstrej/greeter-server:703d2e0bd7f45dfdef69e1dbd16a6486d192f6a7
         name: greeter-server
 ---
 apiVersion: v1
