@@ -16,7 +16,7 @@ spec:
         app: greeter-server
     spec:
       containers:
-      - image: jenniferstrej/greeter-server:703d2e0bd7f45dfdef69e1dbd16a6486d192f6a7
+      - image: jenniferstrej/greeter-server:703d2e0bd7f45dfdef69e1dbd16a6486d192f6a7_3
         name: greeter-server
 ---
 apiVersion: v1
@@ -26,7 +26,6 @@ metadata:
     app: greeter-server
   name: greeter-server
 spec:
-  type: LoadBalancer
   selector:
     app: greeter-server
   ports:

@@ -5,4 +5,4 @@ ADD ./* ./
 RUN pip install grpcio
 RUN pip install grpcio-tools
 
-CMD [ "python", "./greeter_client.py" ]
+CMD [ "python", "-u", "./greeter_client.py" ]
