@@ -8,7 +8,7 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      run: greeter-server
+      app: greeter-server
   template:
     metadata:
       creationTimestamp: null
@@ -16,7 +16,7 @@ spec:
         app: greeter-server
     spec:
       containers:
-      - image: jenniferstrej/greeter-server:1.0
+      - image: jenniferstrej/greeter-server:063d367d20dcb297442e13cbba68fc2f4fd6c98d
         name: greeter-server
 ---
 apiVersion: v1
@@ -26,9 +26,10 @@ metadata:
     app: greeter-server
   name: greeter-server
 spec:
-  ports:
-  - port: 50051
-    protocol: TCP
-    targetPort: 50051
+  type: LoadBalancer
   selector:
     app: greeter-server
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 50051
