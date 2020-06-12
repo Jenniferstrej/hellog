@@ -32,3 +32,5 @@ kubectl get deploy greeter-client -o yaml \
 ```
 
 The client messages should be spread accross the 3 servers
+
+![Linkerd Dashboard and logs](linkerd_terminal.png)
